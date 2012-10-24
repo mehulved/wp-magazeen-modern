@@ -49,10 +49,7 @@
 	
 		<div class="container clearfix">
 	
-			<ul class="pages">
-				<li<?php if( is_home() ) : ?> class="current_page_item"<?php endif; ?>><a href="<?php bloginfo( 'url' ); ?>" title="<?php bloginfo( 'title' ); ?>">Home</a></li>
-				<?php wp_list_pages( 'title_li=&depth=1' ); ?>
-			</ul>
+            <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_class' => 'pages')); ?>
 			
 			<a href="<?php bloginfo( 'rss2_url' ); ?>" class="rss" title="Subscribe to <?php bloginfo( 'name' ); ?> RSS">Subscribe</a>
 			
