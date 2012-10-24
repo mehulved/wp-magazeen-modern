@@ -12,7 +12,7 @@
 				<h4>About this Blog</h4>
 				
 				<p class="about-text">
-					<?php echo get_settings( 'mag_about_blog' ); ?>
+					<?php echo get_option( 'mag_about_blog' ); ?>
 				</p>
 				
 				<p class="copyright">

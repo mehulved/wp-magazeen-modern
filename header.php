@@ -43,7 +43,7 @@
 			</div><!-- End logo -->
 			
             <div id="adspace-header">
-                <?php echo get_settings('mag_adsense'); ?>             
+                <?php echo get_option('mag_adsense'); ?>             
             </div>
 		
 		</div><!-- End Container -->

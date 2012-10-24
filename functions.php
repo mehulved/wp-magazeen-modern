@@ -343,7 +343,7 @@ $meta_boxes =
 			"type" => "image_uploader",
 			"std" => "",
 			"title" => "Image",
-			"description" => "Using the \"<em>Add an Image</em>\" button, upload an image and paste the URL here. Images will be resized. This is the Article's main image and will automatically be sized.")
+			"description" => "Using the Upload Image button, upload/select an image. Images will be resized. This is the Article's main image and will automatically be sized.")
 	);
 
 function meta_boxes() {
