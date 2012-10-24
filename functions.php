@@ -340,7 +340,7 @@ $meta_boxes =
 	array(
 		"image" => array(
 			"name" => "image",
-			"type" => "text",
+			"type" => "image_uploader",
 			"std" => "",
 			"title" => "Image",
 			"description" => "Using the \"<em>Add an Image</em>\" button, upload an image and paste the URL here. Images will be resized. This is the Article's main image and will automatically be sized.")
@@ -366,7 +366,8 @@ function meta_boxes() {
 							echo'<h2>'.$meta_box['title'].'</h2>';
 				echo'	</td>
 						<td>';
-							echo'<input type="text" name="'.$meta_box['name'].'_value" value="'.get_post_meta($post->ID, $meta_box['name'].'_value', true).'" size="100%" /><br />';
+							echo'<input type="text" name="'.$meta_box['name'].'_value" value="'.get_post_meta($post->ID, $meta_box['name'].'_value', true).'" size="100%" id="post_image_text"/>';
+                            echo'<input type="button" name="upload_image" value="Upload Image" class="upload_button" id="post_image"> <br />';
 							echo'<p><label for="'.$meta_box['name'].'_value">'.$meta_box['description'].' Visit the <a href="'.get_bloginfo('template_directory').'/readme.html" title="View ReadMe">README</a> for more information.</label></p>';
 				echo'	</td>
 					</tr>';
@@ -494,4 +495,13 @@ if ( version_compare($wp_version, '3.4', '>=' ) ) {
 else {
     add_custom_image_header($args);
 }
+
+/* Header Image
+/* ----------------------------------------------*/
+function admin_scripts() {
+    wp_register_script('admin_script', get_template_directory_uri() . '/js/functions-admin.js', array('jquery'));
+    wp_enqueue_script('admin_script');
+}
+add_action('admin_print_scripts', 'admin_scripts');
+
 ?>

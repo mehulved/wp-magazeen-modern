@@ -120,8 +120,30 @@
 							
 							<?php
 								break;
-								}
+                                case 'image_uploader' :
 							?>
+                                <tr valign="top">
+                                    <th scope="row">
+                                        <label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
+                                    <th>
+                                    <td>
+										<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="text" value="" size="90" />
+									</td>
+                                    <td>
+                                        <input type="button" value="Upload Image" name="<?php $value['id']; ?>" id="<?php echo $value['id']; ?>">
+                                        <p class="setting-description"><?php echo $value['description']; ?></p>
+                                    </td>
+									<td align="right">
+										<?php if( $value['icon'] != "" ) : ?>
+										<img src="<?php bloginfo( 'template_directory' ); ?>/inc/functions/options/images/<?php echo $value['icon']; ?>" alt="<?php echo $value['name']; ?>" style="border:1px solid #CCCCCC; padding:1px;" />
+										<?php endif; ?>
+									</td>
+								</tr>
+							
+							<?php										
+								break;
+								}
+                            ?>
 					<?php } ?>
 					
 					</tbody>
