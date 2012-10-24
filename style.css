@@ -521,33 +521,20 @@ html[xmlns] .clearfix {
 }
 
 	#logo {
-		margin:0; padding:20px 0;
-		width:580px; height:auto;
+		margin:0 0 0 40px; padding:20px 0;
+		width:500px; height:auto;
 		background:url(images/header-shade.gif) no-repeat top right;
 		float:left;
 	}
 	
-	#searchform-header {
-		margin:78px 20px 0 0; padding:0;
-		width:284px; height:auto;
-		background:url(images/searchform-back.gif) no-repeat center left;
+	#adspace-header {
+        border: 1px solid;
+		width:728px; 
+        height:90px;
 		float:right;
+        margin: 40px 30px 10px 0;
 	}
-	
-		#searchform-header #s {
-			margin:0 0 0 0; padding:6px 10px 5px 25px;
-			width:165px; height:auto;
-			border:0;
-			background:none;
-			float:left;
-			font-size:0.92em; color:#aea592;
-		}
-		
-		#searchform-header #go {
-			float:right;
-			margin:0;
-		}
-	
+
 #navigation {
 	margin:0; padding:0;
 	background:#FFF url(images/navigation.gif) repeat-x bottom center;

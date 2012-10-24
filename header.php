@@ -30,7 +30,7 @@
 
 	<div id="header">
 		
-		<div class="container clearfix">
+		<div class="clearfix">
 		
 			<div id="logo">
 		
@@ -42,7 +42,9 @@
 				
 			</div><!-- End logo -->
 			
-			<?php include_once( TEMPLATEPATH . '/searchform-header.php' ); ?>
+            <div id="adspace-header">
+                
+            </div>
 		
 		</div><!-- End Container -->
 		
