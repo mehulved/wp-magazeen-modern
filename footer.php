@@ -7,21 +7,7 @@
 
 	<div id="footer">
 	
-		<div class="container footer-divider clearfix">
-		
-			<div class="categories">
-				
-				<h4>Categories</h4>
-				
-				<ul class="footer-cat clearfix">
-					<?php 
-						wp_list_categories( 'title_li=&depth=1' );
-					?>
-				</ul><!-- End footer-cats -->
-				
-			</div><!-- End categories -->
-			
-			<div class="about">
+			<div class="about container">
 			
 				<h4>About this Blog</h4>
 				
@@ -30,13 +16,11 @@
 				</p>
 				
 				<p class="copyright">
-					&copy; 2008 Copyright <?php bloginfo( 'name' ); ?>
+                    &copy; <?php echo date('Y'); ?> Copyright <?php bloginfo( 'name' ); ?>
 				</p>
 				
 			</div><!-- End about -->
 		
-		</div><!-- End container -->
-	
 	</div><!-- End footer -->
 	
 	<div id="link-back">

@@ -1041,9 +1041,8 @@ html[xmlns] .clearfix {
   			}
 	
 	#footer .about {
-		margin:0; padding:0;
-		width:580px; height:auto;
-		float:right;
+		padding:0;
+		height:auto;
 	}
 	
 #link-back {
