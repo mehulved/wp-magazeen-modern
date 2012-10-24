@@ -521,7 +521,7 @@ html[xmlns] .clearfix {
 }
 
 	#logo {
-		margin:0; padding:60px 0;
+		margin:0; padding:20px 0;
 		width:580px; height:auto;
 		background:url(images/header-shade.gif) no-repeat top right;
 		float:left;

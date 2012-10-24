@@ -34,8 +34,11 @@
 		
 			<div id="logo">
 		
-				<h2><?php bloginfo( 'description' ); ?></h2>
-				<h1><span></span><a href="<?php bloginfo( 'url' ); ?>" title="<?php bloginfo( 'name' ); ?>"><?php echo strtolower( get_settings( 'blogname' ) ); ?></a></h1>
+                <h1 class="header-image">
+                    <a href="<?php bloginfo('url'); ?>">
+                        <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="header image" />
+                    </a>
+                </h1>
 				
 			</div><!-- End logo -->
 			
