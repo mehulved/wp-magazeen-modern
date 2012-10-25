@@ -39,18 +39,9 @@ get_header(); ?>
 								<?php comments_popup_link(__( '0 Comments' ), __( '1 Comment' ), __( '% Comments' )); ?>
 							</div>
 							
-							<?php if( get_post_meta( $post->ID, "image_value", true ) || (first_image($post->ID)) ) : ?>
-							
 							<div class="post-image">
-                                <?php if (get_post_meta($post->ID, "image_value", true)) { ?>
-								<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><img src="<?php bloginfo( 'template_directory' ); ?>/timthumb.php?src=<?php echo get_post_meta( $post->ID, "image_value", true ); ?>&amp;w=521&amp;h=246&amp;zc=1" alt="<?php the_title(); ?>" /></a>
-                                <?php }
-                                else if (first_image($post->ID) != '') { ?>
-                                    <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><img src="<?php bloginfo( 'template_directory' ); ?>/timthumb.php?src=<?php echo first_image($post->ID); ?>&amp;w=521&amp;h=246&amp;zc=1" alt="<?php the_title(); ?>" /></a>
-                                <?php } ?>
+                                <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><img src="<?php bloginfo( 'template_directory' ); ?>/timthumb.php?src=<?php echo get_thumb_image($post->ID); ?>&amp;w=521&amp;h=246&amp;zc=1" alt="<?php the_title(); ?>" /></a>
 							</div>
-							
-							<?php endif; ?>
 							
 							<div class="post-intro">
 							
@@ -130,18 +121,9 @@ get_header(); ?>
 								<?php comments_popup_link(__( '0 Comments' ), __( '1 Comment' ), __( '% Comments' )); ?>
 							</div>
 							
-							<?php if( get_post_meta( $post->ID, "image_value", true ) || first_image($post->ID) ) : ?>
-							
 							<div class="post-image">
-                                <?php if ( get_post_meta($post->ID, "image_value", true) ) { ?>
-                                    <img src="<?php bloginfo( 'template_directory' ); ?>/timthumb.php?src=<?php echo get_post_meta( $post->ID, "image_value", true ); ?>&amp;w=235&amp;h=109&amp;zc=1" alt="<?php the_title(); ?>" />
-                                <?php }
-                                else if ( first_image($post->ID) != '' ) { ?>
-                                    <img src="<?php bloginfo( 'template_directory' ); ?>/timthumb.php?src=<?php echo first_image($post->ID); ?>&amp;w=235&amp;h=109&amp;zc=1" alt="<?php the_title(); ?>" />
-                                <?php } ?>
+                                    <img src="<?php bloginfo( 'template_directory' ); ?>/timthumb.php?src=<?php echo get_thumb_image( $post->ID ); ?>&amp;w=235&amp;h=109&amp;zc=1" alt="<?php the_title(); ?>" />
 							</div>
-							
-							<?php endif; ?>
 							
 							<div class="post-intro">
 							

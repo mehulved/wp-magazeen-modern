@@ -37,14 +37,10 @@ get_header();
 						
 							<div class="clearfix">
 						
-								<?php if( get_post_meta( $post->ID, "image_value", true ) ) : ?>
-									
 									<div class="post-image-inner right">
-										<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><img src="<?php bloginfo( 'template_directory' ); ?>/timthumb.php?src=<?php echo get_post_meta( $post->ID, "image_value", true ); ?>&amp;w=225&amp;h=246&amp;zc=1" alt="<?php the_title(); ?>" /></a>
+										<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><img src="<?php bloginfo( 'template_directory' ); ?>/timthumb.php?src=<?php echo get_thumb_image( $post->ID ); ?>&amp;w=225&amp;h=246&amp;zc=1" alt="<?php the_title(); ?>" /></a>
 									</div>
 								
-								<?php endif; ?>
-						
 								<?php the_content( '' ); ?>
 								
 								<?php wp_link_pages( array( 'before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number' ) ); ?>
