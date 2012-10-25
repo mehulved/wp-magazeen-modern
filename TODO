@@ -1,0 +1,2 @@
+* Don't use the first image function directly. Write another function which first checks for the post meta, if not present, checks for the featured image, if that isn't present either, it gets the first image from the post.
+* Use the above function in all the places where image_value post meta is used.
