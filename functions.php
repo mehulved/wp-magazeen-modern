@@ -84,11 +84,16 @@ function featured_news() {
 			?>
 		
 			<li class="clearfix">
-				<?php if( get_post_meta( $post->ID, "image_value", true ) ) : ?>
+				<?php if( get_post_meta( $post->ID, "image_value", true ) || first_image($post->ID) ) : ?>
 							
 					<div class="sidebar-preview">
 						<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
-							<img src="<?php bloginfo( 'template_directory' ); ?>/timthumb.php?src=<?php echo get_post_meta( $post->ID, "image_value", true ); ?>&amp;w=109&amp;h=60&amp;zc=1" alt="<?php the_title(); ?>" />
+                            <?php if (get_post_meta($post->ID, "image_value", true)) { ?>
+                                <img src="<?php bloginfo( 'template_directory' ); ?>/timthumb.php?src=<?php echo get_post_meta( $post->ID, "image_value", true ); ?>&amp;w=109&amp;h=60&amp;zc=1" alt="<?php the_title(); ?>" />
+                            <?php }
+                            else if (first_image($post->ID)) { ?>
+                                <img src="<?php bloginfo( 'template_directory' ); ?>/timthumb.php?src=<?php echo first_image( $post->ID ); ?>&amp;w=109&amp;h=60&amp;zc=1" alt="<?php the_title(); ?>" />
+                            <?php } ?>
 						</a>
 					</div>
 							
@@ -199,7 +204,12 @@ function recent_news() {
 							
 					<div class="sidebar-preview">
 						<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
-							<img src="<?php bloginfo( 'template_directory' ); ?>/timthumb.php?src=<?php echo get_post_meta( $post->ID, "image_value", true ); ?>&amp;w=109&amp;h=60&amp;zc=1" alt="<?php the_title(); ?>" />
+                            <?php if (get_post_meta($post->ID, "image_value", true)) { ?>
+                                <img src="<?php bloginfo( 'template_directory' ); ?>/timthumb.php?src=<?php echo get_post_meta( $post->ID, "image_value", true ); ?>&amp;w=109&amp;h=60&amp;zc=1" alt="<?php the_title(); ?>" />
+                            <?php }
+                            else if (first_image($post->ID)) { ?>
+                                <img src="<?php bloginfo( 'template_directory' ); ?>/timthumb.php?src=<?php echo first_image( $post->ID ); ?>&amp;w=109&amp;h=60&amp;zc=1" alt="<?php the_title(); ?>" />
+                            <?php } ?>
 						</a>
 					</div>
 							
