@@ -504,4 +504,22 @@ function admin_scripts() {
 }
 add_action('admin_print_scripts', 'admin_scripts');
 
+/* Function to get the first image from a post
+/* ----------------------------------------------*/
+function first_image($postID) {
+    $args = array(
+        'numberposts' => 1,
+        'order' => 'ASC',
+        'post_mime_type' => 'image',
+        'post_parent' => $postID,
+        'post_status' => null,
+        'post_type' => 'attachment'
+    );
+    $attachments = get_children($args);
+    if ($attachments) {
+        foreach ($attachments as $attachment) {
+            return wp_get_attachment_url($attachment->ID);
+        }
+    }
+}
 ?>

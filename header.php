@@ -78,7 +78,12 @@
 				?>
 				<li>
 					<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
-					<img src="<?php bloginfo( 'template_directory' ); ?>/timthumb.php?src=<?php echo get_post_meta( $post->ID, "image_value", true ); ?>&amp;w=69&amp;h=54&amp;zc=1" alt="<?php the_title(); ?>" />
+                    <?php if ( get_post_meta($post->ID, "image_value", true) ) { ?>
+                        <img src="<?php bloginfo( 'template_directory' ); ?>/timthumb.php?src=<?php echo get_post_meta( $post->ID, "image_value", true ); ?>&amp;w=69&amp;h=54&amp;zc=1" alt="<?php the_title(); ?>" />
+                    <?php }
+                    else if ( first_image($post->ID) != '' ) { ?>
+                        <img src="<?php bloginfo( 'template_directory' ); ?>/timthumb.php?src=<?php echo first_image( $post->ID ); ?>&amp;w=69&amp;h=54&amp;zc=1" alt="<?php the_title(); ?>" />
+                    <?php } ?>
 					</a>
 					<span><?php the_title(); ?></span>
 				</li>
