@@ -1069,4 +1069,6 @@ html[xmlns] .clearfix {
 			background:url(images/function.gif) no-repeat top center;
 		}
 		
-/* Last Update 2.7.09 */
+.youtube_channel {
+    padding-left: 27px;
+}
